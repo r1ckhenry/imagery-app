@@ -1,0 +1,11 @@
+<h1>Hello World!</h1>
+
+<ul>
+  <% @images.each do |image| %>
+    <h2><%= image.title  %></h2>
+    <%= image_tag(image.url, width: '400px')  %> 
+    <p><%= image.description %></p>
+    <p>Photographer: <%= image.photographer %></p>
+    <%= link_to('DELETE', image_path(image.id), method: :delete)  %>
+  <% end %>
+</ul>
